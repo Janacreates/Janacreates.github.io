@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Janapriya Prathap Gajalakshmi — AI · RL · LLMs</title>
-<meta name="description" content="Janapriya Prathap Gajalakshmi — final-year Computing Science (AI) student at the University of Alberta, researching RL and LLMs.">
+<meta name="description" content="Janapriya Prathap Gajalakshmi — fourth-year Computing Science (AI) student at the University of Alberta, researching RL and LLMs and building deployed ML apps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -84,6 +84,7 @@
   .card p{color:var(--muted);margin:0 0 16px;font-size:16px}
   .label{font-family:var(--mono);font-size:12px;color:var(--rose);letter-spacing:.08em;text-transform:uppercase}
   .tag{display:inline-block;font-size:13px;font-weight:500;padding:3px 11px;border-radius:999px;background:var(--blush);color:var(--deep-rose);margin:0 6px 7px 0}
+  .live{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--leaf);padding:2px 10px;border-radius:999px;margin-left:6px;vertical-align:4px;line-height:1.6}
 
   .timeline{list-style:none;margin:0;padding:0;display:grid;gap:18px}
   .timeline li{display:grid;grid-template-columns:48px 1fr;gap:16px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 24px}
@@ -283,10 +284,11 @@
     <div class="typed"><span id="typed"></span><span class="cursor" aria-hidden="true"></span></div>
     <div class="cta">
       <a class="btn main" href="#projects">see my projects</a>
+      <a class="btn soft" href="https://skin-lesion-demo.calmplant-b2760678.northcentralus.azurecontainerapps.io/">try my live demo</a>
       <a class="btn soft" href="https://github.com/Janacreates">GitHub</a>
       <a class="btn soft" href="https://linkedin.com/in/janapriya-prathap-gajalakshmi-a2608a413">LinkedIn</a>
     </div>
-    <div class="open"><i></i> open to Winter 2027 co-op &amp; internships</div>
+    <div class="open"><i></i> open to 2027 co-op &amp; internships</div>
   </div>
 </header>
 
@@ -296,16 +298,18 @@
     <h2>Curious about how machines <em>learn</em>, and who they help.</h2>
     <div class="about">
       <div>
-        <p>I'm a final-year Computing Science (AI) student at the University of Alberta. I do research in reinforcement learning and large language models, and I like building LLM applications and data pipelines that hold up in the real world.</p>
+        <p>I'm a fourth-year Computing Science (AI) student at the University of Alberta. I do research in reinforcement learning and large language models, and I like building LLM applications, data pipelines and deployed ML tools that hold up in the real world.</p>
+        <p>Most recently, I shipped a skin lesion classifier that checks whether a photo looks like its training data before it answers. It's <a href="https://skin-lesion-demo.calmplant-b2760678.northcentralus.azurecontainerapps.io/">live on Azure</a>.</p>
         <p>Long term, I want to use AI for health care. Outside the lab, I lead design for a club that builds adaptive tools for people with disabilities, and I help run student well-being events on campus.</p>
-        <p>I'm looking for a <b>Winter 2027 co-op or internship</b> in ML/AI, data science or business analytics.</p>
+        <p>I'm looking for a <b>2027 co-op or internship</b> in ML/AI, data science or business analytics.</p>
       </div>
 <div class="note"><span class="k">class</span> Janapriya:
-  degree   = <span class="s">"BSc CS (AI) · UAlberta '27"</span>
+  degree   = <span class="s">"BSc CS (AI) · UAlberta '28"</span>
   research = [<span class="s">"bandits × LLMs"</span>,
               <span class="s">"vision transformers"</span>]
   goal     = <span class="s">"AI for health care"</span>
   builds   = [<span class="s">"LLM apps"</span>, <span class="s">"pipelines"</span>,
+              <span class="s">"deployed ML demos"</span>,
               <span class="s">"assistive tools"</span>]
   <span class="c"># also: sunsets, flowers, ducks 🦆</span></div>
     </div>
@@ -316,20 +320,20 @@
     <h2>Things I've <em>built</em></h2>
     <div class="grid">
       <article class="card">
+        <svg class="flower" viewBox="-20 -20 40 40" aria-hidden="true" fill="#e2678f"><use href="#bloom"/></svg>
+        <div class="label">computer vision · health</div>
+        <h3>Skin Lesion Classification under Distribution Shift <span class="live">live</span></h3>
+        <p>Fine-tuned a Vision Transformer three ways (linear probe, full fine-tune, LoRA) on dermoscopy images, then tested on smartphone photos, where accuracy dropped 25–31 points. I added a shift detector that flags unfamiliar photos before predicting (AUROC 0.95 across 5 seeds, catching 71% of smartphone photos vs 24% for the model's own confidence), and deployed it as a live demo.</p>
+        <span class="tag">PyTorch</span><span class="tag">Vision Transformers</span><span class="tag">PEFT (LoRA)</span><span class="tag">ONNX (int8)</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Azure Container Apps</span>
+        <p style="margin:8px 0 0"><a href="https://skin-lesion-demo.calmplant-b2760678.northcentralus.azurecontainerapps.io/">try the live demo ↗</a> &nbsp;·&nbsp; <a href="https://github.com/Janacreates/skin-lesion-shift-peft">view code ↗</a></p>
+      </article>
+      <article class="card">
         <svg class="flower" viewBox="-20 -20 40 40" aria-hidden="true"><use href="#daisy"/></svg>
         <div class="label">agentic ai · team of 2</div>
         <h3>LAIrner</h3>
         <p>An AI tutor that gives hints instead of answers. GPT-4o handles multi-turn reasoning while a lightweight classifier routes each question to 1 of 14 academic domains, with guardrails against answer leaks and hint density that adapts per student.</p>
         <span class="tag">GPT-4o</span><span class="tag">LLM orchestration</span><span class="tag">Next.js</span><span class="tag">Prisma</span><span class="tag">Turso</span>
         <p style="margin:8px 0 0"><a href="https://github.com/bhuvanchandar7/LAIrner">view code ↗</a></p>
-      </article>
-      <article class="card">
-        <svg class="flower" viewBox="-20 -20 40 40" aria-hidden="true" fill="#e2678f"><use href="#bloom"/></svg>
-        <div class="label">computer vision · health</div>
-        <h3>Skin Lesion Classification under Distribution Shift</h3>
-        <p>Fine-tuned a Vision Transformer three ways (linear probe, full fine-tune, LoRA) on dermoscopy images, then tested on smartphone photos. Accuracy dropped 25–31 points out of distribution; LoRA (1.35% of parameters) matched full fine-tuning across 5 seeds.</p>
-        <span class="tag">PyTorch</span><span class="tag">Vision Transformers</span><span class="tag">PEFT (LoRA)</span>
-        <p style="margin:8px 0 0"><a href="https://github.com/Janacreates/skin-lesion-shift-peft">view code ↗</a></p>
       </article>
       <article class="card">
         <svg class="flower" viewBox="-20 -38 40 46" aria-hidden="true" fill="#c88ae0"><use href="#tulip"/></svg>
@@ -373,18 +377,18 @@
     <div class="eyebrow">✿ skills</div>
     <h2>My <em>toolkit</em></h2>
     <div class="skills">
-      <div class="skillbox"><h3>ML / AI</h3><span class="tag">LLMs</span><span class="tag">Prompt engineering</span><span class="tag">RL (bandits)</span><span class="tag">NLP</span><span class="tag">Vision Transformers</span><span class="tag">PyTorch</span><span class="tag">PEFT (LoRA)</span><span class="tag">scikit-learn</span></div>
+      <div class="skillbox"><h3>ML / AI</h3><span class="tag">LLMs</span><span class="tag">Prompt engineering</span><span class="tag">RL (bandits)</span><span class="tag">NLP</span><span class="tag">Vision Transformers</span><span class="tag">PyTorch</span><span class="tag">PEFT (LoRA)</span><span class="tag">scikit-learn</span><span class="tag">ONNX</span><span class="tag">Shift detection</span></div>
       <div class="skillbox"><h3>Data science</h3><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">pandas</span><span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">matplotlib</span><span class="tag">Statistics</span><span class="tag">Forecasting</span></div>
-      <div class="skillbox"><h3>Business analytics</h3><span class="tag">A/B testing</span><span class="tag">CUPED</span><span class="tag">Power analysis</span><span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Streamlit dashboards</span></div>
-      <div class="skillbox"><h3>Engineering</h3><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">C/C++</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Prisma</span><span class="tag">Git</span><span class="tag">GitHub Actions</span><span class="tag">pytest</span></div>
-      <div class="skillbox"><h3>Design</h3><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">Visual &amp; UX design</span><span class="tag">Accessible design</span></div>
+      <div class="skillbox"><h3>Business analytics</h3><span class="tag">A/B testing</span><span class="tag">CUPED</span><span class="tag">Power analysis</span><span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Streamlit dashboards</span></div>
+      <div class="skillbox"><h3>Engineering &amp; cloud</h3><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">C/C++</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Prisma</span><span class="tag">Git</span><span class="tag">GitHub Actions</span><span class="tag">pytest</span><span class="tag">Docker</span><span class="tag">Azure Container Apps</span><span class="tag">Google Cloud</span></div>
+      <div class="skillbox"><h3>Design</h3><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">Photoshop</span><span class="tag">Visual &amp; UX design</span><span class="tag">Accessible design</span></div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="eyebrow" style="justify-content:center">✿ say hi</div>
     <h2>Let's <em>work together</em></h2>
-    <p>I'm open to Winter 2027 co-op and internship roles in ML/AI, data science and business analytics.</p>
+    <p>I'm open to 2027 co-op and internship roles in ML/AI, data science and business analytics.</p>
     <div class="cta">
       <a class="btn main" href="mailto:janacompsci@gmail.com">janacompsci@gmail.com</a>
       <a class="btn soft" href="https://linkedin.com/in/janapriya-prathap-gajalakshmi-a2608a413">LinkedIn</a>
@@ -405,9 +409,10 @@
 
 <script>
   const lines = [
-    "final-year CS (AI) student @ UAlberta",
+    "fourth-year CS (AI) student @ UAlberta",
     "researching bandits + LLMs",
     "vision transformers for real-world data",
+    "shipped a live ML demo on Azure",
     "building LLM apps & data pipelines"
   ];
   const el = document.getElementById("typed");
